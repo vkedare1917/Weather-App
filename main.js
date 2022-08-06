@@ -7,6 +7,7 @@ const temperature = document.getElementById("temperature");
 const humidity = document.getElementById("humidity");
 const showMinTemp = document.querySelector(".min-temp"); 
 const showMaxTemp = document.querySelector(".max-temp"); 
+const windSpeed = document.querySelector(".wind-speed");
 
 submitData.addEventListener("click", () => {
    displayData(cityInput.value);
@@ -19,7 +20,7 @@ async function displayData(city) {
 
    // City
    cityName.textContent = responseData.name;
-   
+
    // Icon
    weatherImg.src = `https://openweathermap.org/img/wn/${responseData.weather[0].icon}.png`;
 
@@ -31,6 +32,12 @@ async function displayData(city) {
    temperatureData -= 273.15;
    temperature.textContent = `Temperature: ${Math.round(temperatureData)} °C`;
    
+   // Humidity
+   humidity.textContent = `Humidity: ${responseData.main.humidity}%`;
+   
+   // Wind Speed
+   windSpeed.textContent = `Wind Speed: ${responseData.wind.speed} km/hr`;
+
    // Min/Max Temperature
    let minTemperature = responseData.main.temp_min;
    let maxTemperature = responseData.main.temp_max;
@@ -38,9 +45,6 @@ async function displayData(city) {
    maxTemperature -= 273.15;
    showMinTemp.textContent = `Min-Temp: ${minTemperature.toFixed(2)} °C`;
    showMaxTemp.textContent = `Max-Temp: ${maxTemperature.toFixed(2)} °C`;
-
-   // Humidity
-   humidity.textContent = `Humidity: ${responseData.main.humidity}%`;
 
    cityInput.value = "";
 }

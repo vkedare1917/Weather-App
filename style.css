@@ -17,30 +17,31 @@ body {
    background-repeat: no-repeat;
 }
 
-/* Container */
+/* Card */
 .container {
    display: flex;
    justify-content: flex-start;
    align-items: center;
    color: white;
    flex-direction: column;
-   width: 350px;
-   height: 370px;
+   width: 360px;
+   height: 390px;
    margin: auto;
    border-radius: 10px;
    background: rgba(0,0,0,0.8);
    backdrop-filter: saturate(180%) blur(10px);
 }
 
-/* Input */
+/* Search Bar */
 .container .input-div {
    display: flex;
    justify-content: center;
    width: 100%;
-   margin: 25px;
+   margin: 20px;
 }
 
 .input-div input[type="text"] {
+   width: 65%;
    height: 35px;
    font-size: 0.95rem;
    margin-right: 5px;
@@ -83,13 +84,17 @@ body {
 }
 
 .container .city-name {
-   font-size: 1.4rem;
+   font-size: 1.5rem;
    margin: 5px;
+}
+
+.container .wind-speed {
+   margin-top: 10px;
 }
 
 .container .feels-like, #temperature, #humidity {
    text-transform: capitalize;
-   font-size: 1.1rem;
+   font-size: 1.2rem;
 }
 
 /* Min/Max Temp */
@@ -97,27 +102,26 @@ body {
    display: flex;
    justify-content: space-evenly;
    width: 100%;
-   margin: 15px;
+   margin: 20px;
    font-size: 0.9rem;
 }
 
 /* Media Query for Cellphones */
 @media screen and (max-width: 500px) {
    .container {
-      width: 285px;
+      width: 315px;
       height: 370px;
    }
 
    .input-div input[type="text"] {
       font-size: 0.85rem;
-      width: 65%;
    }
  
    .container .feels-like, #temperature, #humidity {
-      font-size: 0.9rem;
+      font-size: 1rem;
    }
 
    .container .temps {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
    }
 }
