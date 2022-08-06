@@ -14,7 +14,7 @@ submitData.addEventListener("click", () => {
 
 async function displayData(city) {
    // Fetching data from API
-   const data = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=cad7ec124945dcfff04e457e76760d90`);
+   const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=cad7ec124945dcfff04e457e76760d90`);
    const responseData = await data.json();  
 
    // City
