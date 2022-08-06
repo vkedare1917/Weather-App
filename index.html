@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Weather App</title>
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+   <section class="container">
+      <div class="input-div">
+         <input type="text" id="city-input" placeholder="search" style="text-transform: capitalize;">
+         <button id="submit-data">
+            <i class="fa-solid fa-search"></i>
+         </button>
+      </div>
+      <p class="city-name"></p>
+      <img src="" class="weather-img">
+      <p class="feels-like"></p>
+      <p id="temperature"></p>
+      <p id="humidity"></p>
+      <div class="temps">
+         <p class="min-temp"></p>
+         <p class="max-temp"></p>
+      </div>
+   </section>
+   <script src="main.js"></script>
+</body>
+
+</html>
