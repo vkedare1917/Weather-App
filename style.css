@@ -12,25 +12,35 @@ body {
    justify-content: center;
    align-items: center;
    min-height: 100vh;
-   background-image: url("https://source.unsplash.com/random/1920x1080/?wallpaper,landscape,nature");
+   background-image: url("https://source.unsplash.com/1920x1080/?wallpaper,nature,landscape");
    background-size: cover;
    background-repeat: no-repeat;
 }
 
-/* Card */
+
+/* Main Container */
 .container {
    display: flex;
+   position: relative;
    justify-content: flex-start;
    align-items: center;
    color: white;
    flex-direction: column;
    width: 360px;
-   height: 390px;
+   height: 345px;
    margin: auto;
    border-radius: 10px;
-   background: rgba(0,0,0,0.8);
    backdrop-filter: saturate(180%) blur(10px);
+   background-color: rgba(0,0,0,0.8);
 }
+
+.container.loading-data::after {
+   content: 'Loading...';
+   position: absolute;
+   top: 45%;
+   font-size: 1.3rem;
+}
+
 
 /* Search Bar */
 .container .input-div {
@@ -78,18 +88,25 @@ body {
    color: white;
 }
 
-/* City-name, Description, Temperature, Humidity */
+
+/* Error Class */
+.error-msg {
+   font-size: 1.2rem;
+   font-weight: lighter;
+   color: #ed4337;
+   text-transform: capitalize;
+}
+
+
+/* City Name, Description, Temperature, Humidity */
 .container .city-name, .feels-like, #temperature, #humidity {
    margin: 8px;
 }
 
 .container .city-name {
+   text-transform: capitalize;
    font-size: 1.5rem;
    margin: 5px;
-}
-
-.container .wind-speed {
-   margin-top: 10px;
 }
 
 .container .feels-like, #temperature, #humidity {
@@ -97,20 +114,22 @@ body {
    font-size: 1.2rem;
 }
 
+
 /* Min/Max Temp */
 .container .temps {
    display: flex;
    justify-content: space-evenly;
    width: 100%;
-   margin: 20px;
+   margin: 10px;
    font-size: 0.9rem;
 }
+
 
 /* Media Query for Cellphones */
 @media screen and (max-width: 500px) {
    .container {
-      width: 315px;
-      height: 370px;
+      width: 300px;
+      height: 325px;
    }
 
    .input-div input[type="text"] {
